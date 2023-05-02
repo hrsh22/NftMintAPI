@@ -23,7 +23,7 @@ The NFT API provides awesome functionality for the most popular features when wo
   GET /api/ERC721Transfers
 ```
 
-**Example call:** https://nftmintapi-production.up.railway.app/api/ERC721Transfers
+**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers
 
 ![App Screenshot](https://user-images.githubusercontent.com/59107121/224769589-a93ff4f6-066e-4c0a-b67a-b53f83fb9c90.png)
 
@@ -37,7 +37,7 @@ The NFT API provides awesome functionality for the most popular features when wo
 | :-------- | :------- | :-------------------------------- |
 | `owner`   | `address` | user address |
 
-**Example call:** https://nftmintapi-production.up.railway.app/api/ERC721Transfers?owner=0xuseraddress
+**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?owner=0xuseraddress
 
 #### Get all NFT transfers in a block
 
@@ -49,7 +49,7 @@ The NFT API provides awesome functionality for the most popular features when wo
 | :-------- | :------- | :-------------------------------- |
 | `blocknumber`   | `number` | block number |
 
-**Example call:** https://nftmintapi-production.up.railway.app/api/ERC721Transfers?blockNumber=blocknumber
+**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?blockNumber=blocknumber
 
 #### Get all NFT transfers of a NFT collection
 
@@ -61,5 +61,5 @@ The NFT API provides awesome functionality for the most popular features when wo
 | :-------- | :------- | :-------------------------------- |
 | `tokenAddress`   | `address` | token address |
 
-**Example call:** https://nftmintapi-production.up.railway.app/api/ERC721Transfers?tokenAddress=tokenaddress
+**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?tokenAddress=tokenaddress
 
