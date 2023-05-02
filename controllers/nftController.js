@@ -4,20 +4,35 @@ const getAllNFTs = async (req, res) => {
     const {blockNumber, blockHash,tokenAddress,owner, sort, select} = req.query;
     const queryObject = {};
 
-    if(blockNumber){
-        queryObject.blockNumber = blockNumber;
+    // if(blockNumber){
+    //     queryObject.blockNumber = blockNumber;
+    // }
+
+    // if(blockHash){
+    //     queryObject.blockHash = blockHash;
+    // }
+
+    // if(tokenAddress){
+    //     queryObject.tokenAddress = tokenAddress;
+    // }
+
+    // if(owner){
+    //     queryObject.owner = owner;
+    // }
+    if (blockNumber) {
+        queryObject.blockNumber = new RegExp(`^${blockNumber}$`, "i");
     }
 
-    if(blockHash){
-        queryObject.blockHash = blockHash;
+    if (blockHash) {
+        queryObject.blockHash = new RegExp(`^${blockHash}$`, "i");
     }
 
-    if(tokenAddress){
-        queryObject.tokenAddress = tokenAddress;
+    if (tokenAddress) {
+        queryObject.tokenAddress = new RegExp(`^${tokenAddress}$`, "i");
     }
 
-    if(owner){
-        queryObject.owner = owner;
+    if (owner) {
+        queryObject.owner = new RegExp(`^${owner}$`, "i");
     }
     
     let apiData = ERC721Transfers.find(queryObject); 
@@ -30,14 +45,6 @@ const getAllNFTs = async (req, res) => {
         let selectFix = select.split(",").join(" ");
         apiData = apiData.select(selectFix);
     }
-
-
-    // let page = Number(req.query.page) || 1;
-    // let limit = Number(req.query.limit) || 2;
-    // let skip = (page - 1) * limit;
-
-    // apiData = apiData.skip(skip).limit(limit);
-
 
     console.log("queryObject: ",queryObject);
 
