@@ -1,65 +1,119 @@
+## 📚 MintBoxx - NFT API Documentation
 
-# MintBoxx - NFT APIs
+The MintBoxx NFT API enables Web3 developers to build and scale any NFT dapp effortlessly by accessing all the information related to NFTs on the Filecoin network.
 
-The MintBoxx NFT API enables Web3 developers to build and scale any NFT dapp effortlesslyby accessing all the information related to NFTs on Filecoin Virtual Machine.
+### Mainnet
 
-
-## NFT API Features
-
-The NFT API provides awesome functionality for the most popular features when working with NFTs, including:
-
-- Fetching NFT transfers
-- Fetching NFTs of a owner
-- Fetching all NFTs of a collection
-- Fetching all Collections
-- Fetching NFT metadata ( _... comming soon_ )
-
-
-## API Reference
-
-#### Get all ERC721 transfers
+#### 🚀 Get all ERC721 transfers
 
 ```
-  GET /api/ERC721Transfers
+GET /mainnet/ERC721Transfers
 ```
 
-**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers
+Returns all ERC721 transfers on the Filecoin Mainnet.
 
-![App Screenshot](https://user-images.githubusercontent.com/59107121/224769589-a93ff4f6-066e-4c0a-b67a-b53f83fb9c90.png)
+**Example call:** `https://mintboxx.onrender.com/mainnet/ERC721Transfers`
 
-#### Get NFTs owned by an user
-
-```
-  GET /api/ERC721Transfers?owner=0xuseraddress
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `owner`   | `address` | user address |
-
-**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?owner=0xuseraddress
-
-#### Get all NFT transfers in a block
+#### 🚀 Get NFTs owned by a user
 
 ```
-  GET /api/ERC721Transfers?blockNumber=blocknumber
+GET /mainnet/ERC721Transfers?owner=0xuseraddress
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `blocknumber`   | `number` | block number |
+Returns ERC721 transfers owned by the specified user on the Mainnet.
 
-**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?blockNumber=blocknumber
+| Parameter | Type     | Description   |
+| :-------- | :------- | :------------ |
+| `owner`   | `address` | User address  |
 
-#### Get all NFT transfers of a NFT collection
+**Example call:** `https://mintboxx.onrender.com/mainnet/ERC721Transfers?owner=0xuseraddress`
+
+### Hyperspace Testnet
+
+#### 🚀 Get all ERC721 transfers
 
 ```
-  GET /api/ERC721Transfers?tokenAddress=0xtokenaddress
+GET /hyperspace/ERC721Transfers
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `tokenAddress`   | `address` | token address |
+Returns all ERC721 transfers on the Filecoin Hyperspace testnet.
 
-**Example call:** https://mintboxx.onrender.com/api/ERC721Transfers?tokenAddress=tokenaddress
+**Example call:** `https://mintboxx.onrender.com/hyperspace/ERC721Transfers`
 
+#### 🚀 Get NFTs owned by a user
+
+```
+GET /hyperspace/ERC721Transfers?owner=0xuseraddress
+```
+
+Returns ERC721 transfers owned by the specified user on the Hyperspace testnet.
+
+| Parameter | Type     | Description   |
+| :-------- | :------- | :------------ |
+| `owner`   | `address` | User address  |
+
+**Example call:** `https://mintboxx.onrender.com/hyperspace/ERC721Transfers?owner=0xuseraddress`
+
+### Calibration Testnet
+
+#### 🚀 Get all ERC721 transfers
+
+```
+GET /calibration/ERC721Transfers
+```
+
+Returns all ERC721 transfers on the Filecoin Calibration testnet.
+
+**Example call:** `https://mintboxx.onrender.com/calibration/ERC721Transfers`
+
+#### 🚀 Get NFTs owned by a user
+
+```
+GET /calibration/ERC721Transfers?owner=0xuseraddress
+```
+
+Returns ERC721 transfers owned by the specified user on the Calibration testnet.
+
+| Parameter | Type     | Description   |
+| :-------- | :------- | :------------ |
+| `owner`   | `address` | User address  |
+
+**Example call:** `https://mintboxx.onrender.com/calibration/ERC721Transfers?owner=0xuseraddress`
+
+### Query Parameters
+
+The following query parameters can be used to filter the API results:
+
+- `blockNumber`: Filter by block number.
+- `blockHash`: Filter by block hash.
+- `tokenAddress`: Filter by token address.
+- `owner`: Filter by owner address.
+
+**Note:** Multiple query parameters can be combined to further refine the results.
+
+### 🔍 Sorting
+
+The API supports sorting of results using the `sort` parameter. Multiple fields can be sorted by separating them with commas (`,`).
+
+**Example:** To sort by `blockNumber` in ascending order and `tokenID` in descending order, use `sort=blockNumber,-tokenID`.
+
+### 🎯 Field Selection
+
+The API allows selecting specific fields using the `select` parameter. Multiple fields can be selected by separating them with commas (`,`).
+
+**Example:** To select only the `blockNumber` and `owner` fields, use `select=blockNumber,owner`.
+
+### 📝 Example: Filtering, Sorting, and Field Selection
+
+Suppose you want to fetch ERC721 transfers on the Filecoin Mainnet, filtered by token address, sorted by token ID in descending order, and select only the `blockNumber`,`tokenAddress`, `tokenID`, and `owner` fields. The API call would look like this:
+
+```
+GET /mainnet/ERC721Transfers?tokenAddress=0x12345&sort=-tokenID&select=blockNumber,tokenAddress,tokenID,owner
+```
+
+This call fetches ERC721 transfers from token address 0x12345 on the Mainnet, sorts them by token ID in descending order, and selects only the `blockNumber`, `tokenAddress`, `tokenID`, and `owner` fields in the response.
+
+---
+
+Feel free to explore the MintBoxx NFT API and leverage its powerful features to build amazing NFT applications on the Filecoin network!
+If you have any questions or need assistance with the MintBoxx NFT APIs, please feel free to contact us. We are here to help you!
