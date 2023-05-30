@@ -36,9 +36,9 @@ const start = async () => {
       console.log("Server is live!");
       console.log(`${PORT} is the magic port!`);
     });
-    getHyperspaceNFTs();
-    getCalibrationNFTs();
-    getMainnetNFTs();
+    // getHyperspaceNFTs();
+    // getCalibrationNFTs();
+    // getMainnetNFTs();
   } catch (err) {
     console.log(err);
   }
