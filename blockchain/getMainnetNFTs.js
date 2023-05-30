@@ -42,7 +42,7 @@ const getMainnetNFTs = async () => {
                   }, // update operator to update multiple fields
                   { upsert: true } // options to create the document if it doesn't exist
                 );
-                console.log("Updating entry in the Calibration database!");
+                console.log("Updating entry in the Mainnet database!");
                 console.log(creating);
               }
             } catch (err) {
